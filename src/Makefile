@@ -1,2 +1,5 @@
-ll:
-	latexmk -C -pdf lmumihs.tex
+all:
+	latexmk -pdf lmumihs.tex
+
+clean:
+	latexmk -C
