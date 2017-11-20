@@ -5,7 +5,7 @@
 %% LMU-MI-HS-Template
 %% This template is an adaptation of the IEEE InfoVis/Vis format
 %% http://www.cs.sfu.ca/~vis/Tasks/camera_tvcg.html
-%% Last update: Bastian Pfleging, 05.2016
+%% Last update: Ou Changkun, 11.2017
 \documentclass[journal]{vgtc}
 \usepackage[english]{babel}
 \usepackage{mathptmx}
@@ -13,68 +13,47 @@
 \usepackage{times}
 \usepackage[hyphens]{url}
 \usepackage{float}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=black,bookmarksopen=true]{hyperref}
+
+\usepackage{bookmark}
 \usepackage[backend=bibtex, style=numeric, isbn=true, doi=true, maxnames=99]{biblatex}
 \addbibresource{literature.bib}
 \DeclareGraphicsExtensions{.pdf,.jpg,.pdf,.mps,.png}
 \graphicspath{{img/}}
 \normalfont
-\title{Mobile Affective Computing: A Technology Review}
+\title{An Introduction to Recent Mobile Affective Computing Techniques: \\Methods, Applications and Their Challenges}
 \author{Ou Changkun}
 \authorfooter{
 \item
-  Ou Changkun is studying Human-Computer Interaction at the University of Munich, Germany, E-mail: hi@changkun.us
+  Ou Changkun is studying Human-Computer Interaction at the University of Munich, Germany, E-mail: \url{hi@changkun.us}
 \item
   This research paper was written for the Media Informatics Advanced Seminar 'Human Computer Interaction',
   2017
 }
 \abstract{
-TODO: Add abstract
+Affective Computing has been considered as one of the most important aspects
+in many many human-computer interaction related projects. 
+This paper provides a broad introduction to the recent advances in affective computing based on mobile technologies.
+We expand the emotion inferring principles for different mobile commodity sensors, user interfaces and their possible combinations in the recent researches.
+Then we compare the recent popular machine learning methods and models for these sensor,
+and highlight the most useful methods and models with their performance.
+Our comparisons are not limited to traditional machine learning algorithm, they are also includes
+the representation learning models.
+In the end, we discussed few novel applications based on mobile affective computing techniques,
+such as how adaptive user interface and usability testing works in an emotion-aware system,
+as well as current limitations and open challenges of this research area.
 }
-\keywords{Affective Computing, Touch Interaction, Machine Learning}
+\keywords{Affective Computing, Emotion Inferring, Machine Learning, User Experience}
 
 \begin{document}
-\firstsection{Introduction}
 \maketitle
-TODO: add introduction
 
-\section{Mobile Techniques}
-\subsection{Sensors}
-\subsubsection{Vision Sensors}
-\subsubsection{Touch Sensors}
-\subsubsection{Motion Sensors}
-\subsubsection{Audio Sensors}
-
-\subsection{User Interfaces}
-\subsubsection{UI Metaphors}
-
-\subsection{Technique Fusion}
-\subsubsection{Vision with Touch}
-\subsubsection{Vision with Motion}
-\subsubsection{Touch with Motion}
-\subsubsection{UI with Sensors}
-
-\section{Methods}
-\subsection{Vision Methods}
-\subsection{Voice Methods}
-\subsection{Touch Methods}
-
-\section{Models}
-\subsection{Traditional Machine Learning Methods}
-\subsection{Mordern Deep Learning Methods}
-
-\section{Applications}
-\subsection{Adaptive User Interfaces}
-\subsection{User Experience Design}
-\subsection{Emotion-awared system}
-\subsection{Usability Testing}
-
-\section{Challenges and Limitations}
-\subsection{State Understanding}
-\subsection{Technology-driven}
-\subsection{UX-driven}
-
-\section{Conclusions}
-TODO: add conclusions
+\input{1-intro}
+\input{2-mobile}
+\input{3-methods}
+\input{4-applications}
+\input{5-challenges}
+\input{6-conclusions}
 % \textit{(see table \ref{tab:vis_accept})}.
 % \begin{table}
 % %% Table captions on top in journal version

@@ -1,0 +1,43 @@
+\section{Conclusions}
+% 本文调查了近年来在移动情感计算应用于人机交互项目这个领域的相关文献。
+In this paper, we investigate the recent papers among mobile affective computing related to human computer interaction projects. Section \ref{sec:mobile} discussed different principles in various mobile commodity sensors for emotion inferring.
+These includes:
+\begin{itemize}
+  \item \textbf{Vision sensors}: Pure RGB cameras or camera with depth informations provides RGB images or depth images regarding user faces so that infers emotions, see Section \ref{subsec:camera};
+  \item \textbf{Touch sensors}: Capacitive touch screen provides touch position, touch pressure, touch angle through time within a specific application context, see Section \ref{subsec:touch};
+  \item \textbf{Motion sensors}: Motion sensors typically combines gyroscope and accelerometer, with this combination they can also provide device attitude, see Section \ref{subsec:motion};
+  \item \textbf{Audio sensors}: Audio sensor usually refers to built-in microphones, it collects voice information from current environments, which can infers user emotions based on their speech contents, see Section \ref{subsec:audio};
+  \item \textbf{GPS sensors}: GPS sensors provides geographical information of a user. With Location Based Services, user emotion can be inferred by their location, see Section \ref{subsec:gps}.
+\end{itemize}
+Besides, we also investigated the possibility of sensor combinations. According to our investigation, the following combinations has been applied in mobile affective computing:
+\begin{itemize}
+  \item \textbf{Camera with Microphone}:
+  \item \textbf{Touch Screen with }
+\end{itemize}
+Next, in the Section \ref{sec:methods}
+% 首先，我们讨论了在多种移动商用传感器上对于情感推断的不同原理。
+% 这包括最常用也最有效的传感器：
+% - 摄像头（包括普通 RGB 摄像头和近年来开始流行的深度摄像头，直接从用户脸部信息进行情感推断）、
+% - 触摸屏（包括普通电容屏幕及具备震动反馈的压力感应屏幕，从用户与当前用户界面的交互触摸信息进行情感推断）、
+% - 运动传感器（包括陀螺仪与加速计，从设备的各种姿态进行情感推断）、
+% - 麦克风（从用户当前的环境声音进行推断）
+% - GPS（从用户的地理位置获得一定信息）
+% 此外，我们还调查了这些传感器之间互相组合的可能性，据调查我们发现了以下几种不同组合在移动情感计算已经开始被应用：
+% - 摄像头+环境音
+% - 摄像头+触摸屏
+% - ..
+% 但这些组合还未被研究：
+% - ...
+
+% 接下来，我们根据不同的（传感器）数据类型所使用的不同方法，详细比较了已经被测试过的推断方法和模型。
+% 在这些比较中，我们首先考察了不同的数据类型在处理情感推断的方法，它们包括：
+% - 将情感推断转化为一个分类问题：开心、不开心、中性、等等。基本上可以称之为 affective state detection or classification
+% - 将情感推断转化为一个回归问题：对情感进行连续值的打分
+
+% 然后考察了不同处理手段下的不同模型的性能，并总结得出不同方法下，目前的最佳方法：
+
+% - 视觉方法（MobileNet 神经网络推断）
+% - 触摸屏方法（人工特征工程+支持向量机）
+% - 运动传感器（人工特征工程+支持向量机）
+% - 语音识别（自然语言处理的情感推导）:Speech to Text, Nature Language Processing, 
+
