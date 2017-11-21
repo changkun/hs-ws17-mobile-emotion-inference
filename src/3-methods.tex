@@ -1,29 +1,30 @@
-\section{Methods \& Models}
-\label{sec:models}
+\section{Methods \& Models}\label{sec:methods}
 
 In this section, we present technical method and models in different data type aspects.
 
-\subsection{Vision Aspect} 
-\label{subsec:vision-model}
+\subsection{Vision Aspect} \label{subsec:vision-model}
 
-Landmark detection is the state of the art method and model based on convolutional neural network.
-This is actually related to YOLO algorithm.
+The normal RGB camera brings us focusing on how conduct emotion recognition with RGB images. Through depth camera was recently introduced on commercial mobile phone, its principle basically as same as Microsoft Kinect. Considering these two different sensor aspects, we dive into two different research area on vision sensors.
 
-\subsection{Voice Aspect}
-\label{subsec:voice-model}
+
+% Landmark detection is the state of the art method and model based on convolutional neural network.
+% This is actually related to YOLO algorithm. R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN
+
+\cite{Mollahosseini2017}
+
+\subsection{Voice Aspect}\label{subsec:voice-model}
 
 Voice Aspect as we discussed in the previous section, emotion inferring from user speech is basically
 processing user speech.
 
 There is another method, which is inferring users' emotions for human-mobile voice dialogue applications.
 
-\subsection{Touch Aspect}
-\label{subsec:touch-model}
+\subsection{Touch Aspect}\label{subsec:touch-model}
 
 \begin{itemize}
-  \item linear model: 
-      \cite{Shah2015} hand crafted features, for three classes (happy, unhappy, neutral); 
-      \cite{bhattacharya2017predictive} 7 proposed features, for four classes (Excited, Relaxed, Frustrated, Bored)
+  \item linear model:
+~~~~\cite{Shah2015} hand crafted features, for three classes (happy, unhappy, neutral); 
+~~~~\cite{bhattacharya2017predictive} 7 proposed features, for four classes (Excited, Relaxed, Frustrated, Bored)
 
   \item feature engineer: \cite{Gao2012} application specific, application context
   \item 
@@ -32,3 +33,11 @@ There is another method, which is inferring users' emotions for human-mobile voi
 
 \subsection{Other Aspect}
 \label{subsec:other-model}
+
+
+\begin{itemize}
+  \item Vision method: pre-trained ModelNet;
+  \item Touch method: artificial feature engineering with support vector machine;
+  \item Motion method: artificial feature engineering with support vector machine;
+  \item Audio method: Speech to Text with Nature Language Processing, sequence to sequence model;
+\end{itemize}
