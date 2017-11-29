@@ -1,9 +1,9 @@
-\section{Related Mobile Techniques}\label{sec:mobile}
+\section{Data Sources}\label{sec:source}
 
 - \cite{Tao2005} gives image for different information and different related sensing.
 - \cite{Poria2017} gives multimodal considerations image. 90\% literature consider visual, audio and text information as multimodal affect analysis
 
-\subsection{Vision Sensors}\label{subsec:vision}
+\subsection{Camera}\label{subsec:vision}
 We emphasis vision sensors in the first place since face and facial expressions are undoubtedly one of the most important nonverbal channels used by the human being to convey internal emotion. This part mainly discusses vision sensors, which includes RGB camera and depth camera, and illustrates how vision sensor can be used for affective emotion inferring.
 
 Pure RGB cameras has been widely used in commercial smartphone as image sensor. 
@@ -12,7 +12,7 @@ For the camera with depth informations on mobile (recently introduced TrueDepth 
 \cite{}
 
 
-\subsection{Touch Sensors}\label{subsec:touch}
+\subsection{Touch Screen}\label{subsec:touch}
 Capacitive touch screen provides touch position, touch pressure, touch angle through time within a specific application context
 \cite{Hertenstein2009, Gao2012, Shah2015, bhattacharya2017predictive}
 % 这一部分主要讨论如何使用触摸传感器，可以触摸传感器的不同类型，研究项目中都是怎样使用触摸传感器的特征的？
@@ -29,9 +29,15 @@ because of specific application context), mainly cite these papers: ...
 Motion sensors typically combines gyroscope and accelerometer, with this combination they can also provide device attitude
 This part illustrate \cite{Rana, Mottelson2016, Bailenson2007}
 
+
+\begin{itemize}
+    \item \cite{Mottelson2016}: studied the implications of
+    human affect on general purpose touch-based mobile interaction and showed that it is possible to detect mobile users’ positive and neutral affective states.
+\end{itemize}
+
 Motion sensors become important because it could tells us what is user's body language.
 
-\subsection{Audio Sensors}\label{subsec:audio}
+\subsection{Microphone}\label{subsec:audio}
 Audio sensor usually refers to built-in microphones, it collects voice information from current environments, which can infers user emotions based on their speech contents
 
 Audio sensors mainly infers to input and output microphones. This leans two part of affective computing:
@@ -42,14 +48,7 @@ another is recognize speech text from user, then understanding or inferring from
 
 Second is output a emotional speech from machines.
 
-\subsection{GPS Sensors}\label{subsec:gps}
+\subsection{GPS}\label{subsec:gps}
 GPS sensors provides geographical information of a user. With Location Based Services, user emotion can be inferred by their location
 
 \subsection{Application Context}\label{subsec:ui}
-
-\subsection{Techniques Fusion}\label{subsec:fusion}
-
-% 写作思路：
-% 我们首先发现了一篇全面介绍关于技术融合的文章，我们从这篇文章中抽取出移动平台能够使用的部分 \cite{Mazzoni2016}
-
-This section should present a table for the combination of previous sensors.
