@@ -1,3 +1,6 @@
 *.bbl
 *-blx.bib
 *.run.xml
+src/lmumihs.pdf
+src/lmumihs.synctex.gz
+src/img/hierarchical-eps-converted-to.pdf
