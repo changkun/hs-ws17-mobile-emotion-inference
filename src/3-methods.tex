@@ -1,50 +1,217 @@
-\section{Methods \& Models}\label{sec:methods}
+\section{Methods}\label{sec:methods}
 
-In this section, we present technical method and models in different data type aspects.
+Emotion inferring problem are mostly consider as a classification problem, which classifies three state of user emotion: Happy, Unhappy, Neutral. The reason of this consideration is argued by in technical constrains: more type of emotion we need to classify with more data we need to prepare.  In this section, we will see the most accurate technical method, models and their datasets in different data type aspects essentially all based on machine learning methods.
 
 \subsection{Vision Aspect} \label{subsec:vision-model}
 
-The normal RGB camera brings us focusing on how conduct emotion recognition with RGB images. Through depth camera was recently introduced on commercial mobile phone, its principle basically as same as Microsoft Kinect. Considering these two different sensor aspects, we dive into two different research area on vision sensors.
+% 介绍普通和深度两种识别
+The normal RGB camera brings us focusing on how conduct emotion recognition with RGB images. Through depth camera was recently introduced on commercial mobile phone, its principle basically as same as Microsoft Kinect (see Figure \ref{fig:kinect}). Considering these two different sensor aspects, we dive into two different research area on vision sensors.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{kinect}
+  \caption{Principle of Microsoft Kinect.}
+  \label{fig:kinect}
+\end{figure}
 
-% Landmark detection is the state of the art method and model based on convolutional neural network.
-% This is actually related to YOLO algorithm. R-CNN, Fast R-CNN, Faster R-CNN, Mask R-CNN
+\subsubsection{Plain recognition}
 
-\cite{Mollahosseini2017}
+% 先介绍 最近的 CNN 方法
+Recently, convolutional neural networks (CNNs) has successfuly make break-through contributions to computer vision as well as its application to emotion inferring. 
+AlexNet \cite{Krizhevsky2012} popularized deep convolutional neural networks by winning the ImageNet Challenge. Subsequently, other powerful CNN architecture was proposed such as VGG\cite{Simonyan2015}, Inception series\cite{Szegedy2014, Szegedy2015, Szegedy2016}, ResNet\cite{He2016}, DenseNet\cite{iandola2014densenet} and CapsNet\cite{sabour2017dynamic}. However, the most accurate CNNs usually have hundreds of
+layers and thousands of channels whereas it is entirely not possible to deploy them to mobile system. The increasing of mobile emotion inferring needs of running high quality deep neural networks on embedded devices encourage the study on efficient model designs\cite{he2015convolutional}. 
+
+% 再介绍移动设备上模型的优化是非常重要的
+SqueezeNet \cite{iandola2016squeezenet} is the first model that reduces parameters and computation significantly while maintaining accuracy. MobileNet \cite{howard2017mobilenets} and ShuffleNet \cite{zhang2017shufflenet} utilizes the depthwise separable convolutions among lightweight models. Table \ref{tab:cnn} shows the complexity comparation of these CNNs.
+
+% 比较模型之间的性能
+\begin{table}[htb]
+  \caption{Complexity comparison of CNN models, smaller number refers good performance}
+  \label{tab:cnn}
+  \scriptsize
+  \begin{center}
+    \begin{tabular}{cccc}
+      Model & Cls. Error (\%) &  Complexity (MFLOPs) \\
+    \hline
+    AlexNet\cite{Krizhevsky2012}                   & 42.8         &  720    \\
+    SqueezeNet\cite{iandola2016squeezenet}                & 42.5         &  833    \\
+    MobileNet\cite{howard2017mobilenets}                 & 31.6         &  325    \\
+    ShuffleNet\cite{zhang2017shufflenet}                & 31.0         &  292    \\
+    VGG-16\cite{Simonyan2015}                    & 28.5         & 15300
+    \end{tabular}
+  \end{center}
+\end{table}
+
+% 在识别之前首先需要定位到面部，这就涉及到 landmark detection
+The classification on RGB images is just the final step of feedforward propagation. To determine the facial information inside a image essentially become more difficualt then just a classification, then the problem refers to Landmark detection.
+The recent break-through contributions in these area is the Region-based CNN (R-CNN) approach \cite{girshick2014rich} that to bounding-box object detection is to attend to a manageable number of candidate object regions and the state-of-the-art approach Mask-R-CNN \cite{he2017mask} serve a conceptually simple, flexible, and general framework for object instance segmentation.
+
+% 最后给出最新的 AffectNet 作为 vision 训练的 database
+With all these computer vision methods, the ICML 2013 Challenges in Representation Learning introduced the Facial Expression Recognition 2013 (FER-2013)
+database \cite{goodfellow2013challenges}. Fortunately human actors/subjects databases portray the basic emotions of human external emotion has been created, which solves the problem of training data.
+
+Benitez-Quiroz et al. \cite{fabian2016emotionet} proposed EmotioNet database that extract features by using Gabor filters, their database is subject-independent and cross-database experiments.
+\cite{mollahosseini2016facial} uses FER-Wild database, and trained them on AlexNet with noise estimation methods and archived 82.12\% accuracy on FER-Wild. 
+AffectNet \cite{Mollahosseini2017} is the state-of-the-art database that proposed for given the largest database of facial expression, valence, and arousal in the wild (see Figure \ref{fig:affectnet}). In their paper, various evaluation metrics shows that their deep neural network gives the state-of-the-art performance in facial emotion recognition.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{affectnet}
+  \caption{Samples of AffectNet database and classification results. The emotion expression labels is written in parentheses.}
+  \label{fig:affectnet}
+\end{figure}
+
+\subsubsection{Depth recognition}
+
+As we discussed in previous section, depth camera principle basically as same as Microsoft Kinect, the main difference between depth camera and RGB camera is it provides 3D ficial informations, which leads the model difference in this field. Unlike Kinect, depth camera in most cases can only provides ficial recostruction model information instead of body gesture. Thus, depth recognition mainly focuses on modelling 3D ficial points. 
+
+Paper \cite{chen20153d} was the recent paper that considering 3D modelling. They propose a real-time 3D model-based method that continuously recognizes dimensional emotions from facial expressions in natural communications. The most challenge parts of their research covers the 3D facial informations reconstructed from 2D images. Zhang et al. \cite{zhang2016emotion} proposed their exploration on 3D ficial points modelling of emotion recognition that directly get depth information from Kinect, however their recognition only gives three difference state recognition.
+
+Despite there already exists despth camera in mobile phone, researches in this area are rare and not in popular demand. We belive that main reason is 3D modelling requires extensive computation which is not possible from mobile devices at the moment.
 
 \subsection{Voice Aspect}\label{subsec:voice-model}
 
-Voice Aspect as we discussed in the previous section, emotion inferring from user speech is basically
-processing user speech.
+Voice Aspect as we discussed in the previous section, emotion inferring from user speech is basically processing user speech. The first part is to inferring user speech text from their voice, and the second part of recognition is calculate sentiment from these texts.
 
-There is another method, which is inferring users' emotions for human-mobile voice dialogue applications.
+\subsubsection{Speech recognition}
+
+Speech recognition is a board research area and there exists extensive approaches to archive this goal. Previous years commercial systems modelling speech recognition by using Hiden markov model which archived good performance, however with the raising of deep learning methods, recurrent neral network \cite{mikolov2010recurrent}, Long-shor term memory cell \cite{hochreiter1997long} and attention machanism \cite{google2017}. It is hard to say which is the state-of-the-art model since speech recognition is much more complex than a typical vision task. Consider there are very successful commercial system such as Google Speech API \footnote{\url{https://cloud.google.com/speech/}}can performs stream speech recognition with returning the speech text information. We don't consider this area in detail for the mail goal of mobile affective computing.
+
+\subsubsection{Sentiment Analysis}
+
+Sentiment analysis requires text understanding and it is not an easy problem to
+solve. Some machine learning techniques, including various supervised and unsupervised algorithms, are being utilized. Some algorithms rank the importance of sentences within the text and then construct a summary out of important sentences, others are endto-end generative models. After we have the speech text from user, sentiment analysis can be performed to evaluate user emotions for each speech sentence or a chunk of speech contents during a time period.
+
+\cite{Rajalakshmi2017ACS} provides a board and comprehensively survey on sentiment analysis. We conclude here for the general steps of sentiment analysis:
+
+The approach to extract sentiment from speech text is
+as follows:
+\begin{itemize}
+  \item Tokenize each word via a public sentiment calculation dataset;
+  \item For each word, compare it with positive
+  sentiments and negative sentiments word
+  in the dictionary. Then increment positive
+  count or negative count.
+  \item Finally, based on the positive count and
+  negative count, once can get result percentage about sentiment to decide the
+  polarity.
+\end{itemize}
+
+Sentiment calculation for text essentially a clear defined engineering and the final re sentiment valuesults of user speech can be a training feature to different modalities.
 
 \subsection{Touch Aspect}\label{subsec:touch-model}
 
-\begin{itemize}
-  \item linear model:
-  \item feature engineer: \cite{Gao2012} application specific, application context, the recognition rates are very robust even in naturalistic settings in the context of smartphone-based computer games. 
-  \item \cite{Shah2015} hand crafted features, for three classes (happy, unhappy, neutral); 
-  \item \cite{bhattacharya2017predictive} 7 proposed features, for four classes (Excited, Relaxed, Frustrated, Bored)
-  \item \cite{Tikadar2017}: Four discriminative models, namely the Naïve Bayes, K-Nearest Neighbor (KNN), Decision Tree and Support Vector Machine (SVM) were explored, with SVM giving the highest accuracy of 96.75\%.
-\end{itemize}
+Touch interaction modality in previous research all considered using handcrafted feature for touch behaviour and using kernel SVM to train linear models for classification. \cite{Gao2012} is the fisrt application specific in game, which the recognition rates are very robust even in naturalistic settings in the context of smartphone-based computer games. 
+\cite{Shah2015} proposed a reasonable hand crafted features, for three classes (happy, unhappy, neutral); The recent studies in \cite{bhattacharya2017predictive} has 7 proposed features, for four classes (Excited, Relaxed, Frustrated, Bored) classification; and \cite{Tikadar2017} compares four discriminative models, namely the Naïve Bayes, K-Nearest Neighbor (KNN), Decision Tree and Support Vector Machine (SVM) were explored, with SVM giving the highest accuracy of 96.75\%. Table \ref{tab:touch-feature} shows a feature set of touch interaction information and Table \ref{tab:touch-cls} shows the performance comparation for different classifiers. However readers should incase that these provides solution doesn't provide any stability analysis of their classification model, it is possbile can be counter as a overfitting if readers cannot recur the accuracy.
 
-\subsection{Other Aspect}
-\label{subsec:other-model}
+\begin{table}
+  \caption{Comparison of classifiers.}
+  \label{tab:touch-feature}
+  \scriptsize
+  \begin{center}
+    \begin{tabular}{lll}
+      Feature & Unit (\%)\\
+    \hline
+    Deviation in number of strikes & \\
+    Deviation in number of taps & \\
+    Mode of strike length & Millimeter \\
+    Average strike length & Millimeter \\ 
+    Mode of strike speed  & Meter/second \\ 
+    Average strike speed  & Meter/second
+    Mode of delay & Millisecond \\
+    Average delay & Millisecond \\ 
+    Total delay   & Second\\
+    Turnaround time & Second\\
+    \end{tabular}
+  \end{center}
+\end{table}
 
+\begin{table}
+  \caption{Comparison of classifiers.}
+  \label{tab:touch-cls}
+  \scriptsize
+  \begin{center}
+    \begin{tabular}{lll}
+      Classifier & Accuracy (\%) \\
+    \hline
+    Naïve Bayes     & 86.13\%           \\
+    kNN                & 92.82\%       \\
+    SVM                 & 96.75\%         \\
+    \end{tabular}
+  \end{center}
+\end{table}
 
-\begin{itemize}
-  \item Vision method: pre-trained ModelNet;
-  \item Touch method: artificial feature engineering with support vector machine;
-  \item Motion method: artificial feature engineering with support vector machine;
-  \item Audio method: Speech to Text with Nature Language Processing, sequence to sequence model;
-\end{itemize}
+Touch interaction is a typical interaction information on mobile which output from users.
+One can conclude here is SVM as the most accurate model for handcrafted model in this research direction.
 
 
 \subsection{Sensors Fusion}\label{subsec:fusion}
 
-% 写作思路：
-% 我们首先发现了一篇全面介绍关于技术融合的文章，我们从这篇文章中抽取出移动平台能够使用的部分 
-% \cite{Mazzoni2016}
+Motimodal fusions of previous sensors is essentially a complex challenge. Many many research has foducs on this analysis, in particular \cite{Zeng2004} gives bimodal affective recognition via ficial emotion recognition and combined audio with visual modalities so that the final affect recognition accuracy is greatly improved to almost 90\%. \cite{Dermody2016} proposed a multimodal system with real-time feedback for publick speaking. The system has been developed within the paradigm of positive computing which focuses on designing for user wellbeing.
 
-This section should present a table for the combination of previous sensors.
+As multimodal sentiment analysis and emotion recognition research continues to gain popularity among the AI and NLP research communities, there is need for a timely, thorough literature review to define future directions, which can, in particular, further the progress of early stage researchers interested in this multidisciplinary field (see Figure \ref{fig:multimodal}).
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{multimodal}
+  \caption{A typical multimodal affect analysis framework, image from \cite{Poria2017}.}
+  \label{fig:multimodal}
+\end{figure}
+
+The recent surveys of multimodal affect analysis on mobile \cite{d2015review, poria2016fusing, Poria2017},
+focuses mainly on the state of the art in collecting sample data, and reports performance comparison of selected multimodal and unimodal systems, as opposed to comprehensively reviewing key individual systems and approaches, from the growing literature in the field.
+
+Table \ref{tab:feature-level} from \cite{d2015review} shows the most commonly used experiments result of fusion modalities.
+
+
+\begin{table}
+  \tiny
+  \caption{Results of feature-level fusion}
+  \label{tab:feature-level}
+  \scriptsize
+  \begin{center}
+    \begin{tabular}{lll}
+      Combination of modalities & Precision  \\
+    \hline
+    Accuracy of the experiment carried out on Textual Modality & 0.619   \\
+    Accuracy of the experiment carried out on Audio Modality   & 0.652  \\
+    Accuracy of the experiment carried out on Vision Modality   & 0.681  \\
+    Experiment using only visual and text-based features       & 0.7245 \\
+    Result obtained using visual and audio-based features      & 0.7321 \\
+    Result obtained using audio and text-based features        & 0.7115 \\
+    Accuracy of feature-level fusion of three modalities       & 0.782 
+    \end{tabular}
+  \end{center}
+\end{table}
+
+On the same training and test sets, the classification
+experiment using SVM, ANN and ELM. ELM outperformed ANN by
+12\% in terms of accuracy (see Table \ref{tab:classifier}).
+In terms of training time, the ELM outperformed SVM and ANN
+by a huge margin (Table 7). A real-time multimodal sentiment analysis engine, 
+the ANN as a classifier which provided the best performance in
+terms of both accuracy.
+
+\begin{table}
+  \caption{Comparison of classifiers.}
+  \label{tab:classifier}
+  \scriptsize
+  \begin{center}
+    \begin{tabular}{lll}
+      Classifier & Recall (\%) & Training time \\
+    \hline
+    SVM                   & 77.03         &  2.7 min    \\
+    ELM                & 77.10         &   25 s    \\
+    ANN                 & 57.81         &  2.9 min    \\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+In conclusion, we discussed the technique method in different method. We conclude here in this section for each type of data:
+
+\begin{itemize}
+  \item \emph{Vision data}: CNN models performs the state-of-the-art performance of facial analysis;
+  \item \emph{Speech data}: RNN models performs the state-of-the-art performance of speech recognition and sentiment analysis;
+  \item \emph{Interaction data}: handcrafted features are the most commonly used feature and neural networks for these kind of unstructured data are unminded;
+  \item  \emph{Context data}: application context and geographic location are normally use as a validation dimension for emotion inferring, researches doesn't consider them how to properly use as a training feature.
+\end{itemize}
