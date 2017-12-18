@@ -1,0 +1,88 @@
+= Bitte nur Bewertung und Kommentare ändern =
+=============================================
+========== UniWorx Bewertungsdatei ==========
+======= diese Datei ist UTF8 encodiert ======
+Informationen zum Übungsblatt:
+Veranstaltung: Hauptseminar Medieninformatik
+Blatt: Ausarbeitung 2. Fassung (2)
+Korrektor: *****
+E-Mail: *****
+Abgabe-Id: 171426
+1=bestanden oder 0=nicht bestanden
+=============================================
+Bewertung: 1
+=============================================
+Kommentare:
+# Title of the reviewed submission:
+An Introduction to Recent Mobile Affective Inferring Techniques: Methods, Applications and Their Challenges
+
+# Author of the submission:
+Ou Changkun
+
+# Recommendation (please choose a score):
+4.5
+
+# Contribution: 
+What is the main contribution of the submission?
+An overview of different emotion inferring techniques on mobile devices, and their current use for different data sources. Furthermore, there is a direct comparison of different methods provided with charts, that enable easy comparison.
+
+Please summarize in at least 5 sentences the contribution of this submission. What are the major aspects?
+The paper contributes a very comprehensive literature study on the subject of mobile emotion inferring. First recent advances in this area are presented, before providing possible data sources on mobile devies for emotion inferring. Methods and algorithms are presented, in comparison with their objective measurement accuracy. Furthermore, the prevalent techniques used for each type of data to be analyzed is presented. Some case studies are illustrated, before remaining challenges in the area are discussed and the paper is concluded.
+
+# Weaknesses of the paper:
+Language is sometimes a little bit off, some sentences are not understandable. There is no related work section, not sure if there should be one, because much of the content is described in other chapters. I would consider letting rereading / correct the paper by a native speaker.
+Some abbreviations were not explained: ANN and ELM, page 4, end of the page
+
+# Strengths of the paper:
+What are the strengths of the paper? Explicate what are the strength of this paper in term of its contribution, originality, creativity, rigor, novelty, significance to the field, presentation and organization. Does it inspire you, provide you with new ideas and thoughts, provoke you? Why should it be accepted? 
+Very good overview, many different aspects on the topic were presented in a well structured way. It was easy to read, even for someone who is not an expert of topic.
+Many examples, figures and charts were provided.
+
+
+# Title, abstract, keywords:
+Do title, abstract, and keywords reflect the content of the submission? What could be improved?
+The keywords are a bit general and could be more specific maybe, as machine learning and human computer interaction are commonly used, and often in a wrong way.
+
+# Presentation:
+Please rate the presentation of the submission. E.g.,:
+- What about the readability of the submission?
+There are many minor problems, some grammar errors, plural when it should be singular and vice versa.
+Some major problems as well, where sentences didnt make sense or were incomplete.
+
+- Is the paper well structured?
+Yes, the structure of the paper was easy to follow.
+
+- Is the quality of the included figures sufficient?
+Yes, all figures and pictures, as well as charts are in good quality.
+
+- Do all tables and figures have a caption and are they referenced within the text? Did the author state the source of the figure/table?
+Yes
+
+- Did the author use a consistent formatting?
+Yes
+
+- Did the author use the required LaTeX template? - Yes
+Are there any template issues? - No
+
+- Any other recommendations for improvements?
+
+
+# Citations and references:
+- Please rate the citation style:
+Color of the citations are off, should use different color scheme.
+
+- Are there any unsubstantiated claims? If yes, where?
+No.
+
+- Is it clear what the origin of figures and tables is? Are the references placed properly?
+Yes.
+
+- Are the references complete and consistent?
+Yes
+
+- In general: Where should the author add more references?
+In chapter 2.2 and 2.4 are no citations, and no approaches on using these data sources is presented. This raises the argument why we should include these data sources for emotion inferring.
+
+# Additional comments / recommendations for improvement:
+I've written some comments into the PDF (if this does not work, I can send you an email with the PDF)
+============ Ende der Kommentare ============

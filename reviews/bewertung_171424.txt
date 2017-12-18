@@ -1,0 +1,84 @@
+= Bitte nur Bewertung und Kommentare ändern =
+=============================================
+========== UniWorx Bewertungsdatei ==========
+======= diese Datei ist UTF8 encodiert ======
+Informationen zum Übungsblatt:
+Veranstaltung: Hauptseminar Medieninformatik
+Blatt: Ausarbeitung 2. Fassung (1)
+Korrektor: *****
+E-Mail: *****
+Abgabe-Id: 171424
+1=bestanden oder 0=nicht bestanden
+=============================================
+Bewertung: 1
+=============================================
+Kommentare:
+# Title of the reviewed submission: An Introduction to Recent Mobile Affective Inferring Techniques: Methods, Applications and Their Challenges
+
+# Author of the submission: Ou Changkun
+
+# Recommendation (please choose a score): 4.0 (because of the grammar and spelling problems)
+Strong Accept: 5.0
+Between Possibly Accept and Strong Accept: 4.5
+Possibly Accept: 4.0 
+Between Neutral and Possibly Accept: 3.5
+Neutral: 3.0
+Between Possibly Reject and Neutral: 2.5
+Possibly Reject: 2.0
+Between Reject and Possibly Reject: 1.5
+Reject: 1.0
+
+# Contribution: 
+What is the main contribution of the submission? 
+Please summarize in at least 5 sentences the contribution of this submission. What are the major aspects?
+The author provides an overview of the newest mobile affective inferring techniques. It is summed up which sensors are needed in order to make affective inferring techniques possible for mobiles like the camera or the GPS sensor. The paper also discusses the methods and their corresponding models for affective computing on a mobile basis. Also it gives some case studies in previous researches and it lists challenges for affective computing based on emotion inferring in the current state of the art. 
+
+# Weaknesses of the paper:
+What are the weaknesses of the paper? Explain the weaknesses of this paper in term of its contribution, originality, creativity, rigor, novelty, significance for the field, presentation and organization. How can the authors solve these issues? Are there reasons to reject it?
+
+The paper has some lacks concerning grammar and spelling.
+Overall I think that there is no apparent reason "why this paper exists". It is a summary of techniques and so on but it would be good if in the introduction it would say that there is no such work so far so this work sums up this and that in order to help future researchers and developers in their work.
+There are some terms that are mentioned and which are some chapters but never are explained what they are for. For example chapter 3.1.1 is talking about convolutional neural networks (CNN) and there is also a comparison of different types of CNN but it is not clear what it is (for me at least). Maybe it would be good to say just in a sentence something like that: convolutional neural networks[, which is needed for .. ,] has successfully...
+For me it was hard to read this paper because it was too technical and too sophisticated and had a lot of spelling and grammar problems. But because the purpose of the paper is to discuss techniques it is obvious that it has to be technical. But still I think that it would be easier to read if the vocabulary would be held a little bit more simple.
+
+
+# Strengths of the paper:
+What are the strengths of the paper? Explicate what are the strength of this paper in term of its contribution, originality, creativity, rigor, novelty, significance to the field, presentation and organization. Does it inspire you, provide you with new ideas and thoughts, provoke you? Why should it be accepted? 
+
+The strengths of this paper are that it really gives a good and detailed overview of the techniques and methods and points out the challenges. I'm sure that it would be for future workers on that field a good help.
+
+# Title, abstract, keywords:
+Do title, abstract, and keywords reflect the content of the submission? What could be improved?
+Everything is good. The abstract has some grammar problems but the content is quite understandable.
+
+
+# Presentation:
+Please rate the presentation of the submission. E.g.,:
+- What about the readability of the submission? 
+	It was difficult (for me) to read as the content was very technical and the author used many sophisticated words. However for the main audience of this paper it should be readable and good formulated.
+- Is the paper well structured?
+	yes. 
+- Is the quality of the included figures sufficient? 
+	very qualitative. Especially the Figure 1 which showed the upcoming structure of the paper was very helpful. The figures and tables helped the reader to understand the content better.
+- Do all tables and figures have a caption and are they referenced within the text? Did the author state the source of the figure/table?
+	yes
+- Did the author use a consistent formatting?
+	yes
+- Did the author use the required LaTeX template? Are there any template issues?
+	yes he used the LaTeX template, the only issue is the big "DRAFT" as a watermark in the background.
+- Any other recommendations for improvements?
+
+# Citations and references:
+- Please rate the citation style:
+- Are there any unsubstantiated claims? If yes, where?
+- Is it clear what the origin of figures and tables is? Are the references placed properly?
+- Are the references complete and consistent?
+- In general: Where should the author add more references?
+
+	I think everything is good with the citations and references.
+
+
+# Additional comments / recommendations for improvement:
+Please provide additional comments on how to improve the submission (content, paragraphs that are unclear, other recommendations for improvement
+	All said in the previous points of the review.
+============ Ende der Kommentare ============
