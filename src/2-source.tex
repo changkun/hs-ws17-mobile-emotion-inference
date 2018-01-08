@@ -1,8 +1,8 @@
 \section{Data Sources}\label{sec:source}
 
-Previous surveys such as  \cite{Tao2005, Zhang2014, Poria2017, Garcia-Garcia2017} put forward that in multimodal affective computing with different data sources should be applied with different modelling methods. \cite{Poria2017} also give the argument 90\% literature consider visual, audio and text information as multimodal affect analysis by their extensive literature review.
+Previous surveys such as  \cite{Tao2005, Zhang2014, Poria2017, Garcia2017} put forward that different data sources should be applied to various modeling methods in multimodal affective computing. \cite{Poria2017} also give the argument that 90\% literature consider visual, audio and text information as multimodal affect analysis instead of other dimensions by their extensive literature review.
 
-In this section, we discusses the commonly exists data sources in smartphone, and prepare for the modelling method in the next section. Figure \ref{fig:source} illustrates the data flow from sensors to user emotion state.
+In this section, we discuss the commonly existing data sources in a typical smartphone and prepare for the modelling method in the next section. Figure \ref{fig:source} illustrates the data flow from sensors to user emotion state.
 
 \begin{figure}
     \centering
@@ -12,53 +12,56 @@ In this section, we discusses the commonly exists data sources in smartphone, an
 \end{figure}
 
 \subsection{Camera}\label{subsec:vision}
-We emphasis vision sensors in the first place since face and facial expressions are undoubtedly one of the most important nonverbal channels used by the human being to convey internal emotion. This part mainly discusses vision sensors, which includes RGB camera and depth camera, and illustrates how vision sensor can be used for affective emotion inferring.
+We emphasis vision sensors in the first place since face and facial expressions are undoubtedly one of the most critical nonverbal channels used by the human being to convey internal emotion \cite{james2013emotion, Poria2017}. This part mainly discusses vision sensors, which includes RGB cameras and depth cameras, and illustrates how vision sensor can be used for affective emotion inferring.
 
-Pure RGB cameras has been widely used in commercial smartphone as image sensor. 
-For the camera with depth informations on mobile (recently introduced TrueDepth Camera (see Figure \ref{fig:ipx}) in iPhone X \footnote{\url{https://www.apple.com/iphone-x/\#truedepth-camera}}) combines infrared camera, flood illuminator, proximity sensor, ambient light sensor, front facing camera and dot projector to provide depth images of facial information of a user.
+Pure RGB cameras have been widely used in a commercial smartphone as an image sensor. 
+For the camera with depth information on mobile (recently introduced TrueDepth Camera in iPhone X, see Figure \ref{fig:ipx}\footnote{\url{https://www.apple.com/iphone-x/\#truedepth-camera}}) combines infrared camera, flood illuminator, proximity sensor, ambient light sensor, front-facing camera and dot projector to provide depth images of facial information of a user.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{ipx}
-    \caption{TrueDepth Camera in iPhone X.}
     \label{fig:ipx}
+    \includegraphics[width=0.5\textwidth]{ipx}
+    \caption{TrueDepth Camera in iPhone X }
 \end{figure}
 
 \subsection{Microphone}\label{subsec:audio}
-Audio sensor usually refers to built-in microphones, it collects voice information from current environments, which can infers user emotions based on their speech contents.
+Audio sensor usually refers to built-in microphones; it collects voice information from current environments, which can infer user emotions based on their speech contents.
 
-Inferring emotions from user speech can split as two part of inferring task. The first part is recognize the speech text from user, then understanding or inferring from text.
+Before recognizing user speech, a system usually should take care and preprocess the environmental noise and detect acoustic fingerprint (i.e., voiceprint) \cite{boles2017voice} for the current user, isolate their speech from mixed audio information.
 
-% TODO add more
+Inferring emotions from user speech can split as two part of inferring task. The first part is recognizing the speech text from the user\cite{mikolov2010recurrent, google2017}, then understanding or inferring from the text, namely sentiment analysis \cite{Rajalakshmi2017ACS}.
 
 \subsection{Touch Screen}\label{subsec:touch}
 
-Human emotions can be epxressed in different ways, emotional communication has focused predominantly on the facial and vocal channels but has ignored the tactile channel\cite{hertenstein2009communication}, which investigated the possible expressions of user emotion in detail while they using mobile devices with touch screen.
+Human emotions can be expressed in different ways, emotional communication has focused predominantly on the facial and vocal channels but has ignored the tactile channel\cite{hertenstein2009communication}, which investigated the possible expressions of user emotion in detail while they are using mobile devices with touch screen.
 
-Capacitive touch screen provides touch position, touch pressure, touch angle through time. Among the subsequent researches\cite{Gao2012, Shah2015, Mottelson2016, bhattacharya2017predictive}, researchers explored yeild results that human emotions can be inferred by capacitive touch channel in a specific application context based on these features, whose are the existed typical research on emotion inferring only with touch screen interface.
+A capacitive touch screen provides touch position, touch pressure, touch angle through time. Among the subsequent researches\cite{Gao2012, Shah2015, Mottelson2016, bhattacharya2017predictive}, researchers explored yield results that human emotions can be inferred by capacitive touch channel in a specific application context based on these features, whose are the existed typical research on emotion inferring only with touch screen interface.
 
-Interestingly, 3D touch screen was introduced in commercial devices few years ago, some of researches investigated the haptic  \cite{Eid2016} 
-\cite{Mazzoni2016, Lentini2017} shows a system with haptic touch response essentially can express and influence user emotions. and \cite{Bhattacharya2017} concludes that haptic-based affect detection remains an understudy topic.
+Interestingly, 3D touch screen was introduced in commercial devices a few years ago, some of the researches investigated the haptic  \cite{Eid2016} 
+\cite{Mazzoni2016, Lentini2017} shows a system with haptic touch response essentially can express and influence user emotions. and \cite{Bhattacharya2017} concludes that haptic-based affect detection remains an understudied topic.
 
 \subsection{Motion Sensors}\label{subsec:motion}
 
-Motion sensors typically combines gyroscope and accelerometer. Accelerometer measures proper acceleration (acceleration it experiences relative to free fall), felt by people or objects, units as $m/s^2$ or $g$ (1g when standing on earth at sea level). Most smartphone accelerometers trade large value range for high precision. Gyroscope can be a very useful tool because it moves in peculiar ways and defy gravity. Gyroscopes have been around for a century, and they are now used everywhere from airplanes, toy helicopters to smartphones. A gyroscope allows a smartphone to measure and maintain orientation. Gyroscopic sensors can monitor and control device positions, orientation, direction, angular motion and rotation. Figure \ref{fig:motion} shows the coordinates information of accelerometer and gyroscopy sensors.
+Motion sensors typically combine gyroscope and accelerometer, which are yet another interaction detail information\cite{Zhang2014}. An accelerometer measures proper acceleration (acceleration it experiences relative to free fall), felt by people or objects. Most smartphone accelerometers trade large value range for high precision. The gyroscope can be a handy tool because it moves in peculiar ways and defies gravity. Gyroscopes have been around for a century, and they are now used everywhere from airplanes, toy helicopters to smartphones. A gyroscope allows a smartphone to measure and maintain orientation. Gyroscopic sensors can monitor and control device positions, orientation, direction, angular motion, and rotation. Figure \ref{fig:motion} shows the coordinates information of accelerometer and gyroscope sensors.
+
+With these motion sensors, interaction details information such as device holding posture, device moving trajectory can be inferred from these sensor data \cite{Mottelson2016, Poria2017}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{motion}
+    \includegraphics[width=0.24\textwidth]{coordinate}
+    \includegraphics[width=0.24\textwidth]{coordinate2}
     \caption{Coordinates information of Accelerometer (left) and gyroscope (right) as motion sensors in iOS CoreMotion framework.}
     \label{fig:motion}
 \end{figure}
 
 \subsection{GPS}\label{subsec:gps}
 
-GPS sensors provides geographical information of a user, it detects the location of the smartphone using 1) GPS; 2) Lateration/Triangulation of cell towers or wifi networks (with database of known locations for towers and networks); 3) Location of associated cell tower or WiFi networks.
+GPS sensors provide geographical information of a user, and it detects the location of the smartphone using 1) GPS\cite{tan2013connectivity}; 2) Laceration/Triangulation of cell towers or wifi networks (with a database of known locations for towers and networks)\cite{rana2015opportunistic}; 3) Location of an associated cell tower or WiFi networks\cite{Politou2017}.
 
-However, GPS will not work indoors and can quickly kill battery. Smartphones can try to automatically select best-suited alternative location provider (GPS, cell towers, WiFi), mostly based on desired precision. With the location, we can study the relationship between life patterns and affective states. For example, most people in playground feel happy while most feel sad in cemetery.
+However, GPS will not work indoors and can quickly kill the battery. Smartphones can try to automatically select best-suited alternative location provider (GPS, cell towers, WiFi), mostly based on desired precision. With the location, we can study the relationship between life patterns and affective states. For example, most people in playground feel happy while most feel sad in a cemetery.
 
-Location provides additional information to verify the subjective report from participants of affective studies. It may also help to build a confidence mechanism \cite{tan2013connectivity} for subjective reports. Attaching the location to the subjective report would produce confident weights to measure the significance of collected subjective reports. For example, a participant reported that he was happy in cemetery. But, in common sense, people in cemetery would be sad. Thus, we could set a low weight (e.g., 0.2) as a confident value to the report.
+The location provides additional information to verify the subjective report from participants of affective studies. It may also help to build a confidence mechanism \cite{tan2013connectivity} for subjective reports. Attaching the location to the subjective report would produce confident weights to measure the significance of collected subjective reports. For example, a participant reported that he was happy in a cemetery. But, in common sense, people in the cemetery would be sad. Thus, we could set a low weight as a confidence value to the report.
 
 \subsection{Application Context}\label{subsec:ui}
 
-As we slightly mentioned in previous section, most of the mobile affective inferring techniques based on touch scree and motion sensors\cite{Gao2012, Shah2015, Mottelson2016, bhattacharya2017predictive} are based on specific application context, for example application user interface. This can be another confidence mechanism for inferring system. Vice versa, the inferring systems are only modelling for a specific context, however this could be a drawback of multimodal emotion inferring since a complete system will integrate more models.
+As we slightly mentioned in the previous section, most of the mobile affective inferring techniques based on a touch screen and motion sensors\cite{Gao2012, Shah2015, Mottelson2016, bhattacharya2017predictive} are based on specific application context, for example, application user interface. It can be another confidence mechanism for inferring system. Vice versa, the inferring systems are only modeling for a specific context. However, this could be a drawback of multimodal emotion inferring since a complete system will integrate more models.
