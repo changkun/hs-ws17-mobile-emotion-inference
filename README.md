@@ -14,4 +14,4 @@ In the end, we discussed few novel applications based on mobile affective comput
 
 ## License
 
-MIT &copy; Ou Changkun
+CC-BY 4.0 &copy; Ou Changkun
