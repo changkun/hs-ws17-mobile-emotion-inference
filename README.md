@@ -10,7 +10,7 @@ Our comparisons are not limited to traditional machine learning algorithm; they 
 In the end, we discussed few novel applications based on mobile affective computing techniques, such as how adaptive user interface and usability testing works in an emotion-aware system, as well as current limitations and open challenges of this research area.
 
 - [Paper](./src/lmumihs-ou.pdf)
-- [Slides](./slides/presentation-fina.pdf)
+- [Slides](./slides/presentation-final.pdf)
 
 ## License
 
